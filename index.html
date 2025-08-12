@@ -6,11 +6,11 @@
     <title>Ca'n Cerdà | Panadería Artesanal</title>
     <style>
         :root {
-            --beige-marron: #E6D5B8;  /* Nuevo color beige-marrón claro */
-            --marron-claro: #D2B48C;
+            --beige: #F0E6D2;
+            --marron-claro: #C4A484;
             --marron-oscuro: #8B4513;
             --blanco: #FFFFFF;
-            --gris-texto: #555555;
+            --gris-texto: #5A5A5A;
         }
 
         * {
@@ -22,7 +22,7 @@
         body {
             font-family: 'Montserrat', sans-serif;
             color: var(--gris-texto);
-            background-color: var(--beige-marron);  /* Color de fondo actualizado */
+            background-color: var(--beige);
             line-height: 1.6;
         }
 
@@ -41,7 +41,7 @@
         /* Header */
         .header {
             background-color: var(--blanco);
-            padding: 1rem 2rem;
+            padding: 1.5rem 2rem;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             display: flex;
             justify-content: space-between;
@@ -52,7 +52,7 @@
         }
 
         .logo h1 {
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: 700;
             letter-spacing: 1px;
         }
@@ -60,16 +60,13 @@
         .navbar ul {
             display: flex;
             list-style: none;
-        }
-
-        .navbar li {
-            margin-left: 2rem;
+            gap: 2rem;
         }
 
         .navbar a {
             text-decoration: none;
             color: var(--marron-oscuro);
-            font-weight: 400;
+            font-weight: 500;
             font-size: 1.1rem;
             transition: color 0.3s;
         }
@@ -78,75 +75,239 @@
             color: var(--marron-claro);
         }
 
-        /* Sección Inicio */
-        .inicio-titulo {
+        /* ZIGZAG */
+        .zigzag-container {
+            display: flex;
+            flex-direction: column;
+            gap: 5rem;
+            margin: 5rem 0;
+        }
+
+        .zigzag-item {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .zigzag-item:nth-child(odd) .zigzag-text {
+            padding-right: 2rem;
+            text-align: right;
+        }
+
+        .zigzag-item:nth-child(even) .zigzag-text {
+            padding-left: 2rem;
+            text-align: left;
+        }
+
+        .zigzag-img {
+            flex: 1;
+            min-width: 45%;
+        }
+
+        .zigzag-img img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 8px 20px rgba(139, 69, 19, 0.15);
+        }
+
+        .zigzag-text {
+            flex: 1;
+            min-width: 45%;
+        }
+
+        .zigzag-text h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* PRODUCTOS */
+        .productos-titulo {
             text-align: center;
-            padding: 4rem 0;
+            margin-bottom: 3rem;
         }
 
-        .inicio-titulo h2 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
+        .lista-productos {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin: 4rem 0;
         }
 
-        .inicio-titulo p {
-            font-size: 1.3rem;
-            color: var(--marron-claro);
-            font-style: italic;
-        }
-
-        /* Secciones de contenido */
-        .seccion-contenido {
-            background-color: rgba(255, 255, 255, 0.7);
+        .producto-item {
+            background-color: var(--blanco);
             border-radius: 10px;
             padding: 2rem;
-            margin: 2rem 0;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
         }
 
-        .seccion-contenido h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
+        .producto-item:hover {
+            transform: translateY(-5px);
+        }
+
+        /* CONTACTO */
+        .contacto-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin: 6rem 0;
+        }
+
+        .info-contacto h2 {
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.8rem;
+        }
+
+        .info-item i {
+            font-size: 1.3rem;
+            color: var(--marron-oscuro);
+            margin-right: 1.2rem;
+            width: 30px;
             text-align: center;
         }
 
-        .seccion-contenido p {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
+        .redes-sociales {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2.5rem;
         }
 
-        /* Footer */
+        .redes-sociales a {
+            color: var(--marron-oscuro);
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        .redes-sociales a:hover {
+            transform: translateY(-3px);
+        }
+
+        .formulario-contacto h2 {
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.8rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid var(--marron-claro);
+            border-radius: 6px;
+            font-family: 'Montserrat', sans-serif;
+            background-color: rgba(255, 255, 255, 0.8);
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--marron-oscuro);
+            box-shadow: 0 0 0 3px rgba(139, 69, 19, 0.1);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .btn {
+            background-color: var(--marron-oscuro);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: var(--marron-claro);
+        }
+
+        /* FOOTER */
         .footer {
             background-color: var(--marron-oscuro);
             color: var(--blanco);
             text-align: center;
-            padding: 1.5rem;
-            margin-top: 3rem;
+            padding: 2.5rem;
+            margin-top: 4rem;
         }
 
-        /* Responsive */
+        /* RESPONSIVE */
+        @media (max-width: 992px) {
+            .contacto-container {
+                gap: 3rem;
+            }
+        }
+
         @media (max-width: 768px) {
             .header {
                 flex-direction: column;
-                padding: 1rem;
+                gap: 1.5rem;
             }
             
             .navbar ul {
                 flex-direction: column;
+                gap: 1rem;
                 align-items: center;
             }
-            
-            .navbar li {
-                margin: 0.5rem 0;
+
+            .zigzag-item {
+                flex-direction: column;
+                gap: 2rem;
             }
-            
-            .inicio-titulo h2 {
-                font-size: 2rem;
+
+            .zigzag-item:nth-child(odd) .zigzag-text,
+            .zigzag-item:nth-child(even) .zigzag-text {
+                text-align: center;
+                padding: 0;
+            }
+
+            .zigzag-img img {
+                height: 300px;
+            }
+
+            .contacto-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .info-contacto {
+                text-align: center;
+            }
+
+            .info-item {
+                justify-content: center;
+            }
+
+            .redes-sociales {
+                justify-content: center;
             }
         }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header class="header">
@@ -163,39 +324,135 @@
         </nav>
     </header>
 
-    <main>
-        <section id="inicio" class="container">
-            <div class="inicio-titulo">
-                <h2>Pan y pastelería artesanal</h2>
-                <p>Hecho con amor</p>
-            </div>
-
-            <div class="seccion-contenido">
-                <h3>Delicias hechas con amor</h3>
-                <p>Cada producto está elaborado con ingredientes naturales y tradición familiar.</p>
-            </div>
-
-            <div class="seccion-contenido">
-                <h3>Ingredientes naturales</h3>
-                <p>Seleccionamos los mejores ingredientes para garantizar calidad y sabor.</p>
-            </div>
-
-            <div class="seccion-contenido">
-                <h3>Horneado diario</h3>
-                <p>Todos nuestros productos se elaboran fresco cada mañana.</p>
+    <main class="container">
+        <!-- Sección Inicio con Zigzag -->
+        <section id="inicio">
+            <div class="zigzag-container">
+                <div class="zigzag-item">
+                    <div class="zigzag-text">
+                        <h2>Ingredientes naturales</h2>
+                        <p>Harinas ecológicas, mantequilla de granja y frutas de temporada. Sin conservantes ni aditivos artificiales.</p>
+                    </div>
+                    <div class="zigzag-img">
+                        <img src="img/ingredientes.jpg" alt="Ingredientes naturales">
+                    </div>
+                </div>
+                
+                <div class="zigzag-item">
+                    <div class="zigzag-img">
+                        <img src="img/panaderia.jpg" alt="Pan recién horneado">
+                    </div>
+                    <div class="zigzag-text">
+                        <h2>Horneado diario</h2>
+                        <p>Productos frescos cada mañana, elaborados con técnicas tradicionales y mucho cuidado.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section id="historia" class="container">
-            <div class="seccion-contenido">
-                <h3>Nuestra Historia</h3>
-                <p>Fundada en 1985, comenzamos como un pequeño horno familiar en Mallorca, manteniendo siempre las recetas tradicionales.</p>
+        <!-- Sección Productos -->
+        <section id="productos">
+            <div class="productos-titulo">
+                <h2>Nuestros Productos</h2>
+                <p>Hechos con tradición y dedicación</p>
+            </div>
+            <div class="lista-productos">
+                <div class="producto-item">
+                    <h3>Pan de Centeno</h3>
+                    <p>Harina integral de centeno con semillas de girasol.</p>
+                </div>
+                <div class="producto-item">
+                    <h3>Croissants</h3>
+                    <p>Laminados a mano con mantequilla pura francesa.</p>
+                </div>
+                <div class="producto-item">
+                    <h3>Tarta de Manzana</h3>
+                    <p>Manzanas Golden y canela de Ceylán.</p>
+                </div>
+                <div class="producto-item">
+                    <h3>Pan Rústico</h3>
+                    <p>Masa madre con 48h de fermentación.</p>
+                </div>
+                <div class="producto-item">
+                    <h3>Magdalenas</h3>
+                    <p>Esponjosas con ralladura de limón natural.</p>
+                </div>
+                <div class="producto-item">
+                    <h3>Ensaimadas</h3>
+                    <p>Tradición mallorquina con azúcar glass.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Contacto (NUEVA) -->
+        <section id="contacto" class="section contacto">
+            <div class="contacto-container">
+                <div class="info-contacto">
+                    <h2>Ven a visitarnos</h2>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Calle Artesanal 123, Valldemossa, Mallorca</p>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+34 971 123 456</p>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>info@cancerda.com</p>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <p>Lunes a Sábado: 7:00 - 20:00</p>
+                    </div>
+                    
+                    <div class="redes-sociales">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="formulario-contacto">
+                    <h2>Escríbenos</h2>
+                    <form>
+                        <div class="form-group">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" id="nombre" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="asunto">Asunto</label>
+                            <select id="asunto">
+                                <option value="consulta">Consulta</option>
+                                <option value="pedido">Pedido especial</option>
+                                <option value="evento">Eventos</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje</label>
+                            <textarea id="mensaje" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">Enviar mensaje</button>
+                    </form>
+                </div>
             </div>
         </section>
     </main>
 
     <footer class="footer">
-        <p>© 2025 Ca'n Cerdà. Todos los derechos reservados.</p>
+        <p>© 2025 Ca'n Cerdà | Panadería Artesanal | Todos los derechos reservados</p>
     </footer>
 </body>
 </html>
