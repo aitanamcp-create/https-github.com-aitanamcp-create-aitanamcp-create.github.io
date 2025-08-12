@@ -116,32 +116,32 @@
             padding: 1rem 0 3rem;
         }
 
-        /* GALERÍA ZIGZAG */
-        .galeria-zigzag {
-            max-width: 1200px;
-            margin: 3rem auto;
-        }
-
-        .imagen-texto {
-            display: flex;
-            align-items: center;
-            margin: 4rem 0;
-        }
-
-        .imagen-texto img {
-            width: 50%;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        .texto-izquierda, .texto-derecha {
-            width: 40%;
-            padding: 2rem;
-        }
-
-        .imagen-texto:nth-child(odd) {
-            flex-direction: row-reverse;
-        }
+       <main class="container">
+        <section id="inicio">
+            <div class="zigzag-container">
+            
+                <div class="zigzag-item">
+                    <div class="zigzag-text">
+                        <h2>Ingredientes naturales</h2>
+                        <p>Seleccionamos los mejores ingredientes para garantizar calidad y sabor. Usamos harinas ecológicas, frutas frescas y mantequilla de primera calidad.</p>
+                    </div>
+                    <div class="zigzag-img">
+                        <img src="img/ingredientes.jpg" alt="Ingredientes naturales de calidad">
+                    </div>
+                </div>
+                
+                <!-- Segundo item: imagen IZQUIERDA + texto DERECHA -->
+                <div class="zigzag-item">
+                    <div class="zigzag-img">
+                        <img src="img/panaderia.jpg" alt="Pan recién horneado">
+                    </div>
+                    <div class="zigzag-text">
+                        <h2>Horneado diario</h2>
+                        <p>Todos nuestros productos se elaboran fresco cada mañana. Nuestros panes y pasteles salen del horno antes del amanecer.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         /* SECCIÓN HISTORIA */
         .historia-contenido {
