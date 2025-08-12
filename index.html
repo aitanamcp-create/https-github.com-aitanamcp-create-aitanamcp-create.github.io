@@ -116,33 +116,58 @@
             padding: 1rem 0 3rem;
         }
 
-        /* GALERÍA ZIGZAG */
+      /* GALERÍA ZIGZAG CORREGIDA */
         .galeria-zigzag {
             max-width: 1200px;
             margin: 3rem auto;
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
         }
 
-        .imagen-texto {
+        .zigzag-item {
             display: flex;
             align-items: center;
-            margin: 4rem 0;
+            gap: 3rem;
         }
 
-        .imagen-texto img {
-            width: 50%;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        .texto-izquierda, .texto-derecha {
-            width: 40%;
-            padding: 2rem;
-        }
-
-        .imagen-texto:nth-child(odd) {
+        .zigzag-item:nth-child(even) {
             flex-direction: row-reverse;
         }
 
+        .zigzag-texto, .zigzag-imagen {
+            flex: 1;
+        }
+
+        .zigzag-imagen img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(139, 69, 19, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .zigzag-imagen img:hover {
+            transform: scale(1.02);
+        }
+
+        .zigzag-texto h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.2rem;
+            color: var(--marron-oscuro);
+        }
+
+        .zigzag-texto p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 768px) {
+            .zigzag-item, .zigzag-item:nth-child(even) {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+        }
+       
         /* SECCIÓN HISTORIA */
         .historia-contenido {
             display: flex;
@@ -358,25 +383,33 @@
                     </div>
                 </section>
 
-                <div class="galeria-zigzag">
-                    <div class="imagen-texto">
-                        <div class="texto-izquierda">
-                            <h3>Ingredientes naturales</h3>
-                            <p>Seleccionamos los mejores ingredientes para garantizar calidad y sabor.</p>
-                        </div>
-                        <img src="img/ingredientes.jpg" alt="Ingredientes naturales" class="imagen-derecha">
+                
+            <div class="galeria-zigzag">
+                <!-- Primer ítem -->
+                <div class="zigzag-item">
+                    <div class="zigzag-texto">
+                        <h3>Ingredientes naturales</h3>
+                        <p>Seleccionamos los mejores ingredientes para garantizar calidad y sabor.</p>
                     </div>
-                    
-                    <div class="imagen-texto">
-                        <img src="img/panaderia.jpg" alt="Pan recién horneado" class="imagen-izquierda">
-                        <div class="texto-derecha">
-                            <h3>Horneado diario</h3>
-                            <p>Todos nuestros productos se elaboran fresco cada mañana.</p>
-                        </div>
+                    <div class="zigzag-imagen">
+                        <img src="img/ingredientes.jpg" alt="Ingredientes naturales de calidad">
+                    </div>
+                </div>
+                
+       
+                <div class="zigzag-item">
+                    <div class="zigzag-texto">
+                        <h3>Horneado diario</h3>
+                        <p>Todos nuestros productos se elaboran fresco cada mañana.</p>
+                    </div>
+                    <div class="zigzag-imagen">
+                        <img src="img/panaderia.jpg" alt="Pan recién horneado">
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
+
 
         <section id="historia" class="section historia">
             <div class="container">
