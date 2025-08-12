@@ -82,16 +82,16 @@
         /* SECCIÓN INICIO */
         .inicio-titulo {
             text-align: center;
-            padding: 3rem 0;
+            padding: 3rem 0 1rem;
         }
 
-        .inicio-titulo h1 {
-            font-size: 3.5rem;
+        .inicio-titulo h2 {
+            font-size: 2.5rem;
             margin-bottom: 0.5rem;
         }
 
         .inicio-titulo p {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             color: var(--marron-claro);
             font-style: italic;
         }
@@ -99,7 +99,7 @@
         /* Foto más estrecha */
         .foto-destacada {
             width: 80%;
-            margin: 0 auto;
+            margin: 2rem auto;
             position: relative;
         }
 
@@ -111,15 +111,9 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
-        /* Tarta de temporada sobre la foto */
-        .tarta-temporada {
+        .texto-destacado {
             text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .tarta-temporada h2 {
-            font-size: 2.2rem;
-            margin-bottom: 1rem;
+            padding: 1rem 0 3rem;
         }
 
         /* GALERÍA ZIGZAG */
@@ -150,11 +144,6 @@
         }
 
         /* SECCIÓN HISTORIA */
-        .historia-titulo {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
         .historia-contenido {
             display: flex;
             flex-direction: column;
@@ -175,6 +164,16 @@
         }
 
         /* SECCIÓN PRODUCTOS */
+        .producto-destacado {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .producto-destacado h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
         .lista-productos {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -347,22 +346,18 @@
         <section id="inicio" class="section inicio">
             <div class="container">
                 <div class="inicio-titulo">
-                    <h1>Ca'n Cerdà</h1>
-                    <p>Pan y pastelería artesanal</p>
+                    <h2>Pan y pastelería artesanal</h2>
+                    <p>Hecho con amor.</p>
                 </div>
                 
-                <!-- Tarta de temporada sobre la foto -->
-                <div class="tarta-temporada">
-                    <h2>Tarta de Temporada</h2>
-                    <p>Nuestra especialidad cambia según la estación, utilizando siempre frutas frescas de temporada.</p>
-                </div>
-                
-                <!-- Foto destacada más estrecha -->
                 <section class="foto-destacada">
                     <img src="img/foto-destacada.jpg" alt="Pastelería artesanal Ca'n Cerdà" class="imagen-destacada">
+                    <div class="texto-destacado">
+                        <h2>Delicias hechas con amor</h2>
+                        <p>Cada producto está elaborado con ingredientes naturales y tradición familiar.</p>
+                    </div>
                 </section>
 
-                <!-- Galería zigzag -->
                 <div class="galeria-zigzag">
                     <div class="imagen-texto">
                         <div class="texto-izquierda">
@@ -385,11 +380,7 @@
 
         <section id="historia" class="section historia">
             <div class="container">
-                <!-- Título sobre la foto de historia -->
-                <div class="historia-titulo">
-                    <h2>Nuestra Historia</h2>
-                </div>
-                
+                <h2 class="section-title">Nuestra Historia</h2>
                 <div class="historia-contenido">
                     <img src="img/historia-1.jpg" alt="Fundación de la pastelería" class="historia-imagen">
                     <div class="historia-texto">
@@ -406,9 +397,11 @@
 
         <section id="productos" class="section productos">
             <div class="container">
-                <h2 class="section-title">Nuestros Productos</h2>
+                <div class="producto-destacado">
+                    <h2>Tarta de Temporada</h2>
+                    <p>Nuestra especialidad cambia según la estación, utilizando siempre frutas frescas de temporada.</p>
+                </div>
                 
-                <!-- 6 productos en cajas blancas -->
                 <div class="lista-productos">
                     <div class="producto-item">
                         <img src="img/producto1.jpg" alt="Croissants artesanales">
