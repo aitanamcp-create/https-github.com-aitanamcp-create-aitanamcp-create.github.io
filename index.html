@@ -4,9 +4,359 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ca'n Cerdà | Panadería y Pastelería Artesanal</title>
-    <link rel="stylesheet" href="css/styles.css"> <!-- Archivo CSS con los cambios -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* === CSS COMPLETO (COPIAR Y PEGAR) === */
+        :root {
+            --beige: #F5F5DC;
+            --marron-claro: #D2B48C;
+            --marron-oscuro: #8B4513;
+            --gris-claro: #F8F8F8;
+            --blanco: #FFFFFF;
+            --gris-texto: #555555;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--gris-texto);
+            background-color: var(--beige);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--marron-oscuro);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        /* === HEADER === */
+        .header {
+            background-color: var(--blanco);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .navbar ul {
+            display: flex;
+            list-style: none;
+        }
+
+        .navbar li {
+            margin-left: 2rem;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: var(--marron-oscuro);
+            font-weight: 400;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: var(--marron-claro);
+        }
+
+        /* === INICIO (TÍTULO CENTRADO + FOTO ANCHO COMPLETO) === */
+        .inicio-titulo {
+            text-align: center;
+            padding: 4rem 0 2rem;
+        }
+
+        .inicio-titulo h2 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .inicio-titulo p {
+            font-size: 1.5rem;
+            color: var(--marron-claro);
+            font-style: italic;
+        }
+
+        .foto-destacada {
+            width: 100vw;
+            margin-left: -50vw;
+            left: 50%;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        .imagen-destacada {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .texto-destacado {
+            text-align: center;
+            padding: 1rem 0 3rem;
+        }
+
+        .texto-destacado h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        /* === GALERÍA ZIGZAG === */
+        .galeria-zigzag {
+            max-width: 1200px;
+            margin: 3rem auto;
+        }
+
+        .imagen-texto {
+            display: flex;
+            align-items: center;
+            margin: 4rem 0;
+        }
+
+        .imagen-texto img {
+            width: 50%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .texto-izquierda, .texto-derecha {
+            width: 40%;
+            padding: 2rem;
+        }
+
+        .imagen-texto:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+
+        /* === HISTORIA === */
+        .historia-imagen {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            margin: 2rem 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .historia-texto {
+            padding: 2rem 0;
+        }
+
+        .historia-texto h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .historia-texto p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* === PRODUCTOS === */
+        .producto-destacado {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+
+        .producto-destacado img {
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .producto-descripcion {
+            text-align: center;
+            margin-top: 2rem;
+            max-width: 800px;
+        }
+
+        .producto-descripcion h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .lista-productos {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .producto-item {
+            background-color: var(--blanco);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .producto-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .producto-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .producto-info {
+            padding: 1.5rem;
+        }
+
+        .producto-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* === CONTACTO === */
+        .contacto .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-item i {
+            margin-right: 1rem;
+            color: var(--marron-oscuro);
+            font-size: 1.2rem;
+        }
+
+        .redes-sociales a {
+            display: inline-block;
+            margin-right: 1rem;
+            color: var(--marron-oscuro);
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .redes-sociales a:hover {
+            color: var(--marron-claro);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid var(--marron-claro);
+            border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--marron-oscuro);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .btn {
+            background-color: var(--marron-oscuro);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background-color: var(--marron-claro);
+        }
+
+        /* === FOOTER === */
+        .footer {
+            background-color: var(--marron-oscuro);
+            color: var(--blanco);
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            
+            .navbar ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .navbar li {
+                margin: 0.5rem 0;
+            }
+            
+            .imagen-texto {
+                flex-direction: column;
+            }
+            
+            .imagen-texto img,
+            .texto-izquierda,
+            .texto-derecha {
+                width: 100%;
+            }
+            
+            .contacto .container {
+                grid-template-columns: 1fr;
+            }
+            
+            .inicio-titulo h2 {
+                font-size: 2.2rem;
+            }
+            
+            .imagen-destacada {
+                height: 350px;
+            }
+        }
+    </style>
 </head>
 <body>
     <header class="header">
@@ -24,7 +374,6 @@
     </header>
 
     <main>
-        <!-- SECCIÓN INICIO (CON TÍTULO CENTRADO Y FOTO ANCHO COMPLETO) -->
         <section id="inicio" class="section inicio">
             <div class="container">
                 <div class="inicio-titulo">
@@ -32,7 +381,6 @@
                     <p>Hecho con amor.</p>
                 </div>
                 
-                <!-- Foto destacada (ahora ocupa 100% del ancho) -->
                 <section class="foto-destacada">
                     <img src="img/foto-destacada.jpg" alt="Pastelería artesanal Ca'n Cerdà" class="imagen-destacada">
                     <div class="texto-destacado">
@@ -41,7 +389,6 @@
                     </div>
                 </section>
 
-                <!-- Galería zigzag (se mantiene igual) -->
                 <div class="galeria-zigzag">
                     <div class="imagen-texto">
                         <div class="texto-izquierda">
@@ -62,17 +409,100 @@
             </div>
         </section>
 
-        <!-- Resto de secciones (historia, productos, contacto) -->
         <section id="historia" class="section historia">
-            <!-- ... (tu contenido original) ... -->
+            <div class="container">
+                <div class="historia-contenido">
+                    <img src="img/historia-1.jpg" alt="Fundación de la pastelería" class="historia-imagen">
+                    <div class="historia-texto">
+                        <h2>Nuestra Historia</h2>
+                        <p>Todo comenzó en 1985 cuando nuestra abuela María empezó a hornear para su familia y vecinos. Su pasión por la repostería tradicional y su toque especial dieron origen a lo que hoy es nuestra pastelería.</p>
+                    </div>
+                    <img src="img/historia-2.jpg" alt="Evolución de la pastelería" class="historia-imagen">
+                    <div class="historia-texto">
+                        <h2>Nuestro compromiso hoy</h2>
+                        <p>Mantenemos las recetas tradicionales mientras innovamos con nuevas creaciones que sorprenden a nuestros clientes. Cada producto lleva el sello de calidad y amor que nos caracteriza.</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="productos" class="section productos">
-            <!-- ... (tu contenido original) ... -->
+            <div class="container">
+                <div class="producto-destacado">
+                    <img src="img/producto-destacado.jpg" alt="Tarta de temporada">
+                    <div class="producto-descripcion">
+                        <h2>Tarta de Temporada</h2>
+                        <p>Nuestra especialidad cambia según la estación, utilizando siempre frutas frescas de temporada. Una explosión de sabores en cada porción.</p>
+                    </div>
+                </div>
+                
+                <div class="lista-productos">
+                    <div class="producto-item">
+                        <img src="img/producto1.jpg" alt="Croissants artesanales">
+                        <div class="producto-info">
+                            <h3>Croissants Artesanales</h3>
+                            <p>Hechos con mantequilla pura y masa madre, horneados a diario.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="producto-item">
+                        <img src="img/producto2.jpg" alt="Pan de centeno">
+                        <div class="producto-info">
+                            <h3>Pan de Centeno</h3>
+                            <p>Elaborado con harina integral de centeno y semillas naturales.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="producto-item">
+                        <img src="img/producto3.jpg" alt="Bollería tradicional">
+                        <div class="producto-info">
+                            <h3>Bollería Tradicional</h3>
+                            <p>Recetas heredadas de nuestra abuela, con todo el sabor de antes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="contacto" class="section contacto">
-            <!-- ... (tu contenido original) ... -->
+            <div class="container">
+                <div class="contacto-info">
+                    <h2>Contacto</h2>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Vía Blanquerna 3, Valldemossa, Mallorca</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+34 671 612 520</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>pcancerda@yahoo.com</p>
+                    </div>
+                    <div class="redes-sociales">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="reseñas-formulario">
+                    <h2>Cuéntanos tu experiencia</h2>
+                    <form id="form-reseña" class="reseña-form">
+                        <div class="form-group">
+                            <input type="text" name="nombre" placeholder="Tu nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="reseña" placeholder="Tu experiencia en nuestra pastelería..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Enviar reseña</button>
+                    </form>
+                    <div class="reseñas-listado" id="reseñas-container">
+                        <!-- Reseñas se cargarán aquí -->
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
