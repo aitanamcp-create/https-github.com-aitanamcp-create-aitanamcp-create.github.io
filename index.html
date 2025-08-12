@@ -3,121 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ca'n Cerdà | Pastelería Artesanal</title>
-    <style>
-        :root {
-            --beige: #F5F5DC;
-            --marron-claro: #D2B48C;
-            --marron-oscuro: #8B4513;
-            --blanco: #FFFFFF;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Playfair Display', serif;
-            background-color: var(--beige);
-            color: var(--marron-oscuro);
-            overflow-x: hidden;
-        }
-
-        /* TITULO CENTRADO */
-        .titulo-principal {
-            text-align: center;
-            padding: 4rem 1rem;
-            position: relative;
-        }
-
-        .titulo-principal h1 {
-            font-size: 4rem;
-            font-weight: 700;
-            letter-spacing: 3px;
-            margin-bottom: 1rem;
-        }
-
-        .titulo-principal h2 {
-            font-size: 2rem;
-            font-weight: 400;
-            font-style: italic;
-            color: var(--marron-claro);
-        }
-
-        /* FOTO ANCHO COMPLETO */
-        .foto-destacada {
-            width: 100vw;
-            margin-left: calc(-50vw + 50%);
-            height: 70vh;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .foto-destacada img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-        }
-
-        .texto-destacado {
-            text-align: center;
-            padding: 3rem 1rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .texto-destacado h3 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            position: relative;
-        }
-
-        .texto-destacado h3:after {
-            content: '';
-            display: block;
-            width: 100px;
-            height: 2px;
-            background: var(--marron-claro);
-            margin: 1rem auto;
-        }
-
-        @media (max-width: 768px) {
-            .titulo-principal h1 {
-                font-size: 2.5rem;
-            }
-            
-            .titulo-principal h2 {
-                font-size: 1.5rem;
-            }
-            
-            .foto-destacada {
-                height: 50vh;
-            }
-        }
-    </style>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <title>Ca'n Cerdà | Panadería y Pastelería Artesanal</title>
+    <link rel="stylesheet" href="css/styles.css"> <!-- Archivo CSS con los cambios -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+    <header class="header">
+        <div class="logo">
+            <h1>Ca'n Cerdà</h1>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#historia">Nuestra Historia</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <main>
-        <!-- TÍTULO CENTRADO -->
-        <section class="titulo-principal">
-            <h1>CA'N CERDÀ</h1>
-            <h2>PASTELERÍA ARTESANAL</h2>
+        <!-- SECCIÓN INICIO (CON TÍTULO CENTRADO Y FOTO ANCHO COMPLETO) -->
+        <section id="inicio" class="section inicio">
+            <div class="container">
+                <div class="inicio-titulo">
+                    <h2>Pan y pastelería artesanal</h2>
+                    <p>Hecho con amor.</p>
+                </div>
+                
+                <!-- Foto destacada (ahora ocupa 100% del ancho) -->
+                <section class="foto-destacada">
+                    <img src="img/foto-destacada.jpg" alt="Pastelería artesanal Ca'n Cerdà" class="imagen-destacada">
+                    <div class="texto-destacado">
+                        <h2>Delicias hechas con amor</h2>
+                        <p>Cada producto está elaborado con ingredientes naturales y tradición familiar.</p>
+                    </div>
+                </section>
+
+                <!-- Galería zigzag (se mantiene igual) -->
+                <div class="galeria-zigzag">
+                    <div class="imagen-texto">
+                        <div class="texto-izquierda">
+                            <h3>Ingredientes naturales</h3>
+                            <p>Seleccionamos los mejores ingredientes para garantizar calidad y sabor.</p>
+                        </div>
+                        <img src="img/ingredientes.jpg" alt="Ingredientes naturales" class="imagen-derecha">
+                    </div>
+                    
+                    <div class="imagen-texto">
+                        <img src="img/panaderia.jpg" alt="Pan recién horneado" class="imagen-izquierda">
+                        <div class="texto-derecha">
+                            <h3>Horneado diario</h3>
+                            <p>Todos nuestros productos se elaboran fresco cada mañana.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <!-- FOTO ANCHO COMPLETO -->
-        <div class="foto-destacada">
-            <img src="https://images.unsplash.com/photo-1608190003443-86a8cd7f754c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Pastelería artesanal Ca'n Cerdà">
-        </div>
+        <!-- Resto de secciones (historia, productos, contacto) -->
+        <section id="historia" class="section historia">
+            <!-- ... (tu contenido original) ... -->
+        </section>
 
-        <!-- TEXTO DESCRIPTIVO -->
-        <div class="texto-destacado">
-            <h3>Delicias hechas con amor</h3>
-            <p>Cada producto está elaborado con ingredientes naturales y tradición familiar.</p>
-        </div>
+        <section id="productos" class="section productos">
+            <!-- ... (tu contenido original) ... -->
+        </section>
+
+        <section id="contacto" class="section contacto">
+            <!-- ... (tu contenido original) ... -->
+        </section>
     </main>
+
+    <footer class="footer">
+        <p>© 2025 Ca'n Cerdà. Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>
