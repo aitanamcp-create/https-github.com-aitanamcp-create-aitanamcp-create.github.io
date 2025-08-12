@@ -116,55 +116,60 @@
             padding: 1rem 0 3rem;
         }
 
-      /* GALERÍA ZIGZAG CORREGIDA */
+      /* GALERÍA ZIGZAG FUNCIONAL */
         .galeria-zigzag {
             max-width: 1200px;
             margin: 3rem auto;
-            display: flex;
-            flex-direction: column;
-            gap: 4rem;
         }
 
         .zigzag-item {
             display: flex;
             align-items: center;
-            gap: 3rem;
+            margin: 4rem 0;
         }
 
-        .zigzag-item:nth-child(even) {
-            flex-direction: row-reverse;
+        /* Ítem impar (texto izquierda, imagen derecha) */
+        .zigzag-item:nth-child(odd) .zigzag-texto {
+            order: 1;
+            padding-right: 2rem;
+        }
+        .zigzag-item:nth-child(odd) .zigzag-imagen {
+            order: 2;
+        }
+
+        /* Ítem par (texto derecha, imagen izquierda) */
+        .zigzag-item:nth-child(even) .zigzag-texto {
+            order: 2;
+            padding-left: 2rem;
+        }
+        .zigzag-item:nth-child(even) .zigzag-imagen {
+            order: 1;
         }
 
         .zigzag-texto, .zigzag-imagen {
-            flex: 1;
+            width: 50%;
         }
 
         .zigzag-imagen img {
             width: 100%;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(139, 69, 19, 0.1);
-            transition: transform 0.3s;
-        }
-
-        .zigzag-imagen img:hover {
-            transform: scale(1.02);
-        }
-
-        .zigzag-texto h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1.2rem;
-            color: var(--marron-oscuro);
-        }
-
-        .zigzag-texto p {
-            font-size: 1.1rem;
-            line-height: 1.7;
+            box-shadow: 0 4px 8px rgba(139, 69, 19, 0.2);
         }
 
         @media (max-width: 768px) {
-            .zigzag-item, .zigzag-item:nth-child(even) {
+            .zigzag-item {
                 flex-direction: column;
-                gap: 1.5rem;
+            }
+            .zigzag-texto, .zigzag-imagen {
+                width: 100%;
+                padding: 0 !important;
+            }
+            .zigzag-texto {
+                order: 2 !important;
+                margin-top: 1.5rem;
+            }
+            .zigzag-imagen {
+                order: 1 !important;
             }
         }
        
@@ -384,28 +389,26 @@
                 </section>
 
                 
-            <div class="galeria-zigzag">
-                <!-- Primer ítem -->
-                <div class="zigzag-item">
-                    <div class="zigzag-texto">
-                        <h3>Ingredientes naturales</h3>
-                        <p>Seleccionamos los mejores ingredientes para garantizar calidad y sabor.</p>
-                    </div>
-                    <div class="zigzag-imagen">
-                        <img src="img/ingredientes.jpg" alt="Ingredientes naturales de calidad">
-                    </div>
-                </div>
-                
-       
-                <div class="zigzag-item">
-                    <div class="zigzag-texto">
-                        <h3>Horneado diario</h3>
-                        <p>Todos nuestros productos se elaboran fresco cada mañana.</p>
-                    </div>
-                    <div class="zigzag-imagen">
-                        <img src="img/panaderia.jpg" alt="Pan recién horneado">
-                    </div>
-                </div>
+               <section class="galeria-zigzag">
+        <!-- PRIMER ÍTEM (texto izquierda, imagen derecha) -->
+        <div class="zigzag-item">
+            <div class="zigzag-texto">
+                <h3>Ingredientes naturales</h3>
+                <p>Seleccionamos los mejores ingredientes para garantizar calidad y sabor.</p>
+            </div>
+            <div class="zigzag-imagen">
+                <img src="img/ingredientes.jpg" alt="Ingredientes naturales">
+            </div>
+        </div>
+        
+        <!-- SEGUNDO ÍTEM (texto derecha, imagen izquierda) -->
+        <div class="zigzag-item">
+            <div class="zigzag-texto">
+                <h3>Horneado diario</h3>
+                <p>Todos nuestros productos se elaboran fresco cada mañana.</p>
+            </div>
+            <div class="zigzag-imagen">
+                <img src="img/panaderia.jpg" alt="Pan recién horneado">
             </div>
         </div>
     </section>
