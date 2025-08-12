@@ -4,10 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ca'n Cerdà | Panadería y Pastelería Artesanal</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* === CSS COMPLETO (COPIAR Y PEGAR) === */
         :root {
             --beige: #F5F5DC;
             --marron-claro: #D2B48C;
@@ -42,7 +39,7 @@
             padding: 2rem 0;
         }
 
-        /* === HEADER === */
+        /* HEADER */
         .header {
             background-color: var(--blanco);
             padding: 1rem 2rem;
@@ -82,14 +79,14 @@
             color: var(--marron-claro);
         }
 
-        /* === INICIO (TÍTULO CENTRADO + FOTO ANCHO COMPLETO) === */
+        /* SECCIÓN INICIO */
         .inicio-titulo {
             text-align: center;
-            padding: 4rem 0 2rem;
+            padding: 3rem 0;
         }
 
-        .inicio-titulo h2 {
-            font-size: 3rem;
+        .inicio-titulo h1 {
+            font-size: 3.5rem;
             margin-bottom: 0.5rem;
         }
 
@@ -99,33 +96,33 @@
             font-style: italic;
         }
 
+        /* Foto más estrecha */
         .foto-destacada {
-            width: 100vw;
-            margin-left: -50vw;
-            left: 50%;
+            width: 80%;
+            margin: 0 auto;
             position: relative;
-            overflow: hidden;
-            margin-bottom: 2rem;
         }
 
         .imagen-destacada {
             width: 100%;
-            height: 500px;
+            height: 400px;
             object-fit: cover;
-            display: block;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
-        .texto-destacado {
+        /* Tarta de temporada sobre la foto */
+        .tarta-temporada {
             text-align: center;
-            padding: 1rem 0 3rem;
+            margin-bottom: 2rem;
         }
 
-        .texto-destacado h2 {
-            font-size: 2rem;
+        .tarta-temporada h2 {
+            font-size: 2.2rem;
             margin-bottom: 1rem;
         }
 
-        /* === GALERÍA ZIGZAG === */
+        /* GALERÍA ZIGZAG */
         .galeria-zigzag {
             max-width: 1200px;
             margin: 3rem auto;
@@ -152,57 +149,32 @@
             flex-direction: row-reverse;
         }
 
-        /* === HISTORIA === */
+        /* SECCIÓN HISTORIA */
+        .historia-titulo {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .historia-contenido {
+            display: flex;
+            flex-direction: column;
+        }
+
         .historia-imagen {
             width: 100%;
             height: 400px;
             object-fit: cover;
-            margin: 2rem 0;
+            margin: 1rem 0;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
         .historia-texto {
             padding: 2rem 0;
-        }
-
-        .historia-texto h2 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .historia-texto p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-
-        /* === PRODUCTOS === */
-        .producto-destacado {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 3rem;
-        }
-
-        .producto-destacado img {
-            width: 100%;
-            max-height: 500px;
-            object-fit: cover;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
-
-        .producto-descripcion {
             text-align: center;
-            margin-top: 2rem;
-            max-width: 800px;
         }
 
-        .producto-descripcion h2 {
-            font-size: 2.2rem;
-            margin-bottom: 1rem;
-        }
-
+        /* SECCIÓN PRODUCTOS */
         .lista-productos {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -238,7 +210,7 @@
             margin-bottom: 0.5rem;
         }
 
-        /* === CONTACTO === */
+        /* SECCIÓN CONTACTO */
         .contacto .container {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -309,7 +281,7 @@
             background-color: var(--marron-claro);
         }
 
-        /* === FOOTER === */
+        /* FOOTER */
         .footer {
             background-color: var(--marron-oscuro);
             color: var(--blanco);
@@ -318,7 +290,7 @@
             margin-top: 3rem;
         }
 
-        /* === RESPONSIVE === */
+        /* RESPONSIVE */
         @media (max-width: 768px) {
             .header {
                 flex-direction: column;
@@ -348,15 +320,13 @@
                 grid-template-columns: 1fr;
             }
             
-            .inicio-titulo h2 {
-                font-size: 2.2rem;
-            }
-            
-            .imagen-destacada {
-                height: 350px;
+            .foto-destacada {
+                width: 95%;
             }
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header class="header">
@@ -377,18 +347,22 @@
         <section id="inicio" class="section inicio">
             <div class="container">
                 <div class="inicio-titulo">
-                    <h2>Pan y pastelería artesanal</h2>
-                    <p>Hecho con amor.</p>
+                    <h1>Ca'n Cerdà</h1>
+                    <p>Pan y pastelería artesanal</p>
                 </div>
                 
+                <!-- Tarta de temporada sobre la foto -->
+                <div class="tarta-temporada">
+                    <h2>Tarta de Temporada</h2>
+                    <p>Nuestra especialidad cambia según la estación, utilizando siempre frutas frescas de temporada.</p>
+                </div>
+                
+                <!-- Foto destacada más estrecha -->
                 <section class="foto-destacada">
                     <img src="img/foto-destacada.jpg" alt="Pastelería artesanal Ca'n Cerdà" class="imagen-destacada">
-                    <div class="texto-destacado">
-                        <h2>Delicias hechas con amor</h2>
-                        <p>Cada producto está elaborado con ingredientes naturales y tradición familiar.</p>
-                    </div>
                 </section>
 
+                <!-- Galería zigzag -->
                 <div class="galeria-zigzag">
                     <div class="imagen-texto">
                         <div class="texto-izquierda">
@@ -411,16 +385,20 @@
 
         <section id="historia" class="section historia">
             <div class="container">
+                <!-- Título sobre la foto de historia -->
+                <div class="historia-titulo">
+                    <h2>Nuestra Historia</h2>
+                </div>
+                
                 <div class="historia-contenido">
                     <img src="img/historia-1.jpg" alt="Fundación de la pastelería" class="historia-imagen">
                     <div class="historia-texto">
-                        <h2>Nuestra Historia</h2>
                         <p>Todo comenzó en 1985 cuando nuestra abuela María empezó a hornear para su familia y vecinos. Su pasión por la repostería tradicional y su toque especial dieron origen a lo que hoy es nuestra pastelería.</p>
                     </div>
                     <img src="img/historia-2.jpg" alt="Evolución de la pastelería" class="historia-imagen">
                     <div class="historia-texto">
-                        <h2>Nuestro compromiso hoy</h2>
-                        <p>Mantenemos las recetas tradicionales mientras innovamos con nuevas creaciones que sorprenden a nuestros clientes. Cada producto lleva el sello de calidad y amor que nos caracteriza.</p>
+                        <h3>Nuestro compromiso hoy</h3>
+                        <p>Mantenemos las recetas tradicionales mientras innovamos con nuevas creaciones que sorprenden a nuestros clientes.</p>
                     </div>
                 </div>
             </div>
@@ -428,14 +406,9 @@
 
         <section id="productos" class="section productos">
             <div class="container">
-                <div class="producto-destacado">
-                    <img src="img/producto-destacado.jpg" alt="Tarta de temporada">
-                    <div class="producto-descripcion">
-                        <h2>Tarta de Temporada</h2>
-                        <p>Nuestra especialidad cambia según la estación, utilizando siempre frutas frescas de temporada. Una explosión de sabores en cada porción.</p>
-                    </div>
-                </div>
+                <h2 class="section-title">Nuestros Productos</h2>
                 
+                <!-- 6 productos en cajas blancas -->
                 <div class="lista-productos">
                     <div class="producto-item">
                         <img src="img/producto1.jpg" alt="Croissants artesanales">
@@ -458,6 +431,30 @@
                         <div class="producto-info">
                             <h3>Bollería Tradicional</h3>
                             <p>Recetas heredadas de nuestra abuela, con todo el sabor de antes.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="producto-item">
+                        <img src="img/producto4.jpg" alt="Tarta de chocolate">
+                        <div class="producto-info">
+                            <h3>Tarta de Chocolate</h3>
+                            <p>Con chocolate belga 70% cacao y crema fresca.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="producto-item">
+                        <img src="img/producto5.jpg" alt="Magdalenas caseras">
+                        <div class="producto-info">
+                            <h3>Magdalenas Caseras</h3>
+                            <p>Esponjosas y con aroma a limón natural.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="producto-item">
+                        <img src="img/producto6.jpg" alt="Pan rústico">
+                        <div class="producto-info">
+                            <h3>Pan Rústico</h3>
+                            <p>Fermentación lenta con masa madre de cultivo propio.</p>
                         </div>
                     </div>
                 </div>
@@ -498,9 +495,6 @@
                         </div>
                         <button type="submit" class="btn">Enviar reseña</button>
                     </form>
-                    <div class="reseñas-listado" id="reseñas-container">
-                        <!-- Reseñas se cargarán aquí -->
-                    </div>
                 </div>
             </div>
         </section>
