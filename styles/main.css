@@ -81,11 +81,13 @@ h1, h2, h3 {
 .inicio-titulo h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
+    align-items: center;
 }
 
 .inicio-titulo p {
     font-size: 1.2rem;
-    color: var(--marron-oscuro);
+    color: var(--marron-oscuro)
+    align-items: center;;
 }
 
 .galeria-zigzag {
