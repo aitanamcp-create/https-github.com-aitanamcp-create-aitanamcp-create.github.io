@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delicias Dulces | Pastelería Artesanal</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <h1>Delicias Dulces</h1>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#historia">Nuestra Historia</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio" class="section inicio">
+            <div class="container">
+                <div class="inicio-titulo">
+                    <h2>Bienvenidos a nuestra pastelería artesanal</h2>
+                    <p>Donde cada bocado es un momento de felicidad</p>
+                </div>
+                
+                <div class="galeria-zigzag">
+                    <div class="imagen-texto">
+                        <div class="texto-izquierda">
+                            <h3>Ingredientes naturales</h3>
+                            <p>Seleccionamos los mejores ingredientes para garantizar calidad y sabor.</p>
+                        </div>
+                        <img src="img/ingredientes.jpg" alt="Ingredientes naturales" class="imagen-derecha">
+                    </div>
+                    
+                    <div class="imagen-texto">
+                        <img src="img/panaderia.jpg" alt="Pan recién horneado" class="imagen-izquierda">
+                        <div class="texto-derecha">
+                            <h3>Horneado diario</h3>
+                            <p>Todos nuestros productos se elaboran fresco cada mañana.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="historia" class="section historia">
+            <div class="container">
+                <div class="historia-contenido">
+                    <img src="img/historia-1.jpg" alt="Fundación de la pastelería" class="historia-imagen">
+                    
+                    <div class="historia-texto">
+                        <h2>Nuestra Historia</h2>
+                        <p>Todo comenzó en 1985 cuando nuestra abuela María empezó a hornear para su familia y vecinos. Su pasión por la repostería tradicional y su toque especial dieron origen a lo que hoy es nuestra pastelería.</p>
+                    </div>
+                    
+                    <img src="img/historia-2.jpg" alt="Evolución de la pastelería" class="historia-imagen">
+                    
+                    <div class="historia-texto">
+                        <h2>Nuestro compromiso hoy</h2>
+                        <p>Mantenemos las recetas tradicionales mientras innovamos con nuevas creaciones que sorprenden a nuestros clientes. Cada producto lleva el sello de calidad y amor que nos caracteriza.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="productos" class="section productos">
+            <div class="container">
+                <div class="producto-destacado">
+                    <img src="img/producto-destacado.jpg" alt="Tarta de temporada">
+                    <div class="producto-descripcion">
+                        <h2>Tarta de Temporada</h2>
+                        <p>Nuestra especialidad cambia según la estación, utilizando siempre frutas frescas de temporada. Una explosión de sabores en cada porción.</p>
+                    </div>
+                </div>
+                
+                <div class="lista-productos">
+                    <div class="producto-item">
+                        <img src="img/producto1.jpg" alt="Croissants artesanales">
+                        <div class="producto-info">
+                            <h3>Croissants Artesanales</h3>
+                            <p>Hechos con mantequilla pura y masa madre, horneados a diario.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="producto-item">
+                        <img src="img/producto2.jpg" alt="Pan de centeno">
+                        <div class="producto-info">
+                            <h3>Pan de Centeno</h3>
+                            <p>Elaborado con harina integral de centeno y semillas naturales.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Añade más productos según necesites -->
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="section contacto">
+            <div class="container">
+                <div class="contacto-info">
+                    <h2>Contacto</h2>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Calle del Dulce, 123, Ciudad</p>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+34 123 456 789</p>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>hola@deliciasdulces.com</p>
+                    </div>
+                    
+                    <div class="redes-sociales">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="reseñas-formulario">
+                    <h2>Cuéntanos tu experiencia</h2>
+                    <form id="form-reseña" class="reseña-form">
+                        <div class="form-group">
+                            <input type="text" name="nombre" placeholder="Tu nombre" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <textarea name="reseña" placeholder="Tu experiencia en nuestra pastelería..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">Enviar reseña</button>
+                    </form>
+                    
+                    <div class="reseñas-listado" id="reseñas-container">
+                        <!-- Las reseñas se cargarán aquí -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© 2023 Delicias Dulces. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
