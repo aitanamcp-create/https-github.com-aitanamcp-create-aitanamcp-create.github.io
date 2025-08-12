@@ -6,7 +6,7 @@
     <title>Ca'n Cerdà | Panadería Artesanal</title>
     <style>
         :root {
-            --beige: #F5F5DC;
+            --beige-marron: #E6D5B8;  /* Nuevo color beige-marrón claro */
             --marron-claro: #D2B48C;
             --marron-oscuro: #8B4513;
             --blanco: #FFFFFF;
@@ -22,7 +22,7 @@
         body {
             font-family: 'Montserrat', sans-serif;
             color: var(--gris-texto);
-            background-color: var(--beige);
+            background-color: var(--beige-marron);  /* Color de fondo actualizado */
             line-height: 1.6;
         }
 
@@ -54,18 +54,23 @@
         .logo h1 {
             font-size: 2rem;
             font-weight: 700;
+            letter-spacing: 1px;
         }
 
         .navbar ul {
             display: flex;
             list-style: none;
-            gap: 2rem;
+        }
+
+        .navbar li {
+            margin-left: 2rem;
         }
 
         .navbar a {
             text-decoration: none;
             color: var(--marron-oscuro);
-            font-weight: 500;
+            font-weight: 400;
+            font-size: 1.1rem;
             transition: color 0.3s;
         }
 
@@ -76,165 +81,39 @@
         /* Sección Inicio */
         .inicio-titulo {
             text-align: center;
-            padding: 3rem 0;
+            padding: 4rem 0;
         }
 
-        /* ZIGZAG PERFECTO */
-        .zigzag-container {
-            display: flex;
-            flex-direction: column;
-            gap: 4rem;
-            margin: 4rem 0;
+        .inicio-titulo h2 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
         }
 
-        .zigzag-item {
-            display: flex;
-            align-items: center;
-            gap: 3rem;
+        .inicio-titulo p {
+            font-size: 1.3rem;
+            color: var(--marron-claro);
+            font-style: italic;
         }
 
-        /* Imagen derecha + texto izquierda */
-        .zigzag-item:nth-child(odd) .zigzag-text {
-            order: 1;
-            text-align: right;
-        }
-        
-        .zigzag-item:nth-child(odd) .zigzag-img {
-            order: 2;
-        }
-
-        /* Imagen izquierda + texto derecha */
-        .zigzag-item:nth-child(even) .zigzag-text {
-            order: 2;
-            text-align: left;
-        }
-        
-        .zigzag-item:nth-child(even) .zigzag-img {
-            order: 1;
-        }
-
-        .zigzag-img {
-            flex: 1;
-            min-width: 50%;
-        }
-
-        .zigzag-img img {
-            width: 100%;
-            height: 350px;
-            object-fit: cover;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .zigzag-text {
-            flex: 1;
+        /* Secciones de contenido */
+        .seccion-contenido {
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 10px;
             padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
         }
 
-        /* Sección Historia */
-        .historia-contenido {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        .seccion-contenido h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
             text-align: center;
         }
 
-        .historia-imagen {
-            width: 100%;
+        .seccion-contenido p {
+            text-align: center;
             max-width: 800px;
-            height: 400px;
-            object-fit: cover;
-            margin: 2rem 0;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        /* Sección Productos */
-        .lista-productos {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .producto-item {
-            background-color: var(--blanco);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-
-        .producto-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .producto-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .producto-info {
-            padding: 1.5rem;
-        }
-
-        /* Sección Contacto */
-        .contacto-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-        }
-
-        .info-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .info-item i {
-            margin-right: 1rem;
-            color: var(--marron-oscuro);
-            font-size: 1.2rem;
-        }
-
-        .redes-sociales {
-            display: flex;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .redes-sociales a {
-            color: var(--marron-oscuro);
-            font-size: 1.5rem;
-            transition: color 0.3s;
-        }
-
-        .redes-sociales a:hover {
-            color: var(--marron-claro);
-        }
-
-        .formulario-contacto input,
-        .formulario-contacto textarea {
-            width: 100%;
-            padding: 0.8rem;
-            margin-bottom: 1rem;
-            border: 1px solid var(--marron-claro);
-            border-radius: 4px;
-        }
-
-        .btn {
-            background-color: var(--marron-oscuro);
-            color: white;
-            border: none;
-            padding: 0.8rem 1.5rem;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .btn:hover {
-            background-color: var(--marron-claro);
+            margin: 0 auto;
         }
 
         /* Footer */
@@ -242,55 +121,32 @@
             background-color: var(--marron-oscuro);
             color: var(--blanco);
             text-align: center;
-            padding: 2rem;
-            margin-top: 4rem;
+            padding: 1.5rem;
+            margin-top: 3rem;
         }
 
         /* Responsive */
         @media (max-width: 768px) {
             .header {
                 flex-direction: column;
-                gap: 1rem;
                 padding: 1rem;
             }
             
             .navbar ul {
                 flex-direction: column;
-                gap: 1rem;
                 align-items: center;
             }
-
-            .zigzag-item {
-                flex-direction: column;
-                gap: 1.5rem;
+            
+            .navbar li {
+                margin: 0.5rem 0;
             }
-
-            .zigzag-text {
-                text-align: center !important;
-                order: 2 !important;
-            }
-
-            .zigzag-img {
-                order: 1 !important;
-            }
-
-            .contacto-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .lista-productos {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .lista-productos {
-                grid-template-columns: 1fr;
+            
+            .inicio-titulo h2 {
+                font-size: 2rem;
             }
         }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="header">
@@ -308,130 +164,32 @@
     </header>
 
     <main>
-        <!-- Sección Inicio -->
         <section id="inicio" class="container">
             <div class="inicio-titulo">
                 <h2>Pan y pastelería artesanal</h2>
                 <p>Hecho con amor</p>
             </div>
 
-            <!-- ZIGZAG PERFECTO -->
-            <div class="zigzag-container">
-                <!-- Primer item: texto izquierda + imagen derecha -->
-                <div class="zigzag-item">
-                    <div class="zigzag-text">
-                        <h3>Ingredientes naturales</h3>
-                        <p>Seleccionamos los mejores ingredientes para garantizar calidad y sabor. Usamos harinas ecológicas, frutas frescas y mantequilla de primera calidad.</p>
-                    </div>
-                    <div class="zigzag-img">
-                        <img src="img/ingredientes.jpg" alt="Ingredientes naturales">
-                    </div>
-                </div>
-                
-                <!-- Segundo item: imagen izquierda + texto derecha -->
-                <div class="zigzag-item">
-                    <div class="zigzag-img">
-                        <img src="img/panaderia.jpg" alt="Pan recién horneado">
-                    </div>
-                    <div class="zigzag-text">
-                        <h3>Horneado diario</h3>
-                        <p>Todos nuestros productos se elaboran fresco cada mañana. Nuestros panes y pasteles salen del horno antes del amanecer.</p>
-                    </div>
-                </div>
+            <div class="seccion-contenido">
+                <h3>Delicias hechas con amor</h3>
+                <p>Cada producto está elaborado con ingredientes naturales y tradición familiar.</p>
+            </div>
+
+            <div class="seccion-contenido">
+                <h3>Ingredientes naturales</h3>
+                <p>Seleccionamos los mejores ingredientes para garantizar calidad y sabor.</p>
+            </div>
+
+            <div class="seccion-contenido">
+                <h3>Horneado diario</h3>
+                <p>Todos nuestros productos se elaboran fresco cada mañana.</p>
             </div>
         </section>
 
-        <!-- Sección Historia -->
         <section id="historia" class="container">
-            <h2>Nuestra Historia</h2>
-            <div class="historia-contenido">
-                <img src="img/historia.jpg" alt="Nuestra panadería" class="historia-imagen">
-                <div class="historia-texto">
-                    <p>Fundada en 1985 en Mallorca, comenzamos como un pequeño horno familiar. Hoy mantenemos la misma pasión por la repostería artesanal que nuestra abuela nos enseñó.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Sección Productos -->
-        <section id="productos" class="container">
-            <h2>Nuestros Productos</h2>
-            <div class="lista-productos">
-                <div class="producto-item">
-                    <img src="img/producto1.jpg" alt="Pan de centeno">
-                    <div class="producto-info">
-                        <h3>Pan de Centeno</h3>
-                        <p>Elaborado con harina integral y semillas naturales.</p>
-                    </div>
-                </div>
-                <div class="producto-item">
-                    <img src="img/producto2.jpg" alt="Croissants">
-                    <div class="producto-info">
-                        <h3>Croissants Artesanales</h3>
-                        <p>Hechos con mantequilla pura francesa.</p>
-                    </div>
-                </div>
-                <div class="producto-item">
-                    <img src="img/producto3.jpg" alt="Tarta de manzana">
-                    <div class="producto-info">
-                        <h3>Tarta de Manzana</h3>
-                        <p>Con manzanas frescas de temporada.</p>
-                    </div>
-                </div>
-                <div class="producto-item">
-                    <img src="img/producto4.jpg" alt="Pan rústico">
-                    <div class="producto-info">
-                        <h3>Pan Rústico</h3>
-                        <p>Fermentación lenta con masa madre.</p>
-                    </div>
-                </div>
-                <div class="producto-item">
-                    <img src="img/producto5.jpg" alt="Magdalenas">
-                    <div class="producto-info">
-                        <h3>Magdalenas Caseras</h3>
-                        <p>Esponjosas y con aroma a limón natural.</p>
-                    </div>
-                </div>
-                <div class="producto-item">
-                    <img src="img/producto6.jpg" alt="Bollos de leche">
-                    <div class="producto-info">
-                        <h3>Bollos de Leche</h3>
-                        <p>Esponjosos y ligeramente dulces.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Sección Contacto -->
-        <section id="contacto" class="container">
-            <h2>Contacto</h2>
-            <div class="contacto-grid">
-                <div class="contacto-info">
-                    <div class="info-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <p>Vía Blanquerna 3, Valldemossa, Mallorca</p>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-phone"></i>
-                        <p>+34 671 612 520</p>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-envelope"></i>
-                        <p>pcancerda@yahoo.com</p>
-                    </div>
-                    <div class="redes-sociales">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                    </div>
-                </div>
-                <div class="formulario-contacto">
-                    <form>
-                        <input type="text" placeholder="Nombre" required>
-                        <input type="email" placeholder="Email" required>
-                        <textarea placeholder="Mensaje" rows="5" required></textarea>
-                        <button type="submit" class="btn">Enviar Mensaje</button>
-                    </form>
-                </div>
+            <div class="seccion-contenido">
+                <h3>Nuestra Historia</h3>
+                <p>Fundada en 1985, comenzamos como un pequeño horno familiar en Mallorca, manteniendo siempre las recetas tradicionales.</p>
             </div>
         </section>
     </main>
