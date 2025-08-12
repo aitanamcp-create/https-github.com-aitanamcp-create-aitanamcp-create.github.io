@@ -345,4 +345,35 @@ h1, h2, h3 {
     .contacto .container {
         grid-template-columns: 1fr;
     }
+    
+.foto-destacada {
+    max-width: 100%;
+    margin: 2rem auto;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.imagen-destacada {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(139, 69, 19, 0.2); 
+    border: 2px solid #D2B48C; 
+    margin-bottom: 1rem;
+}
+
+.texto-destacado h2 {
+    font-family: 'Playfair Display', serif;
+    color: #8B4513; 
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.texto-destacado p {
+    font-family: 'Montserrat', sans-serif;
+    color: #555;
+    max-width: 600px;
+    margin: 0 auto;
+}
 }
